@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: sans-serif;
+        }
+        h1{
+            font-size: 26px;
+            text-align: center;
+            text-decoration: underline;
+        }
+        .container{
+            width: 300px;
+            height: 280px;
+            background-color: antiquewhite;
+            box-sizing: border-box;
+            margin: auto;
+            margin-top: 50px;
+            padding: 10px;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+        input{
+            display: block;
+            width: 100%;
+            margin: auto;
+        }
+        #submit{
+            width: 20%;
+            background-color: black;
+            color: white;
+            border: 1px solid black;
+            border-radius: 5px ;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Enter Your Details</h1>
+        <form action="" id="myform">
+            Student Name:<input type="text" id="name"/><br>
+            Phone Number:<input type="text" id="phone"/><br>
+            City:<input type="text" id="city"/><br>
+            <input type="submit" id="submit">
+        </form>
+    </div>
+    
+</body>
+<script src="./index.js"></script>
+</html>

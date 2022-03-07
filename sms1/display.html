@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            font-family: sans-serif;
+            margin: 0px;
+            padding: 0x;
+        }
+        thead{
+            font-weight: bold;
+            text-align: center;
+        }
+        tbody{
+            text-align: center;
+            color: brown;
+        }
+        table{
+            margin: auto;
+            margin-top: 50px;
+            background-color: antiquewhite;
+           
+        }
+        td:first-child{
+            width: 5%;
+        }
+        td{
+            width: 30%;
+        }
+        table,tr,td{
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+        <table>
+            <thead>
+                <tr>
+                    <td>#</td>
+                    <td>Student Name</td>
+                    <td>Phone Number</td>
+                    <td>City</td>
+                </tr>
+            </thead>
+            <tbody id="body"></tbody>
+        </table>
+
+    
+</body>
+<script src="display.js"></script>
+</html>
