@@ -119,19 +119,19 @@ b1.addEventListener("click",()=>{
         return b.imdbRating - a.imdbRating;
     })
     movie_box.innerHTML=null;
-    movie_data.forEach((elem)=>{
+    movie_data.forEach((el)=>{
         let div=document.createElement("div");
         div.id="dab";
         let poster =document.createElement("img");
-        poster.src=elem.Poster;
+        poster.src=el.Poster;
         let p1=document.createElement("p");
-        p1.innerText="Title: "+elem.Title;
+        p1.innerText="Title: "+el.Title;
         let p2=document.createElement("p");
-        p2.innerText="Released: "+elem.Released;
+        p2.innerText="Released: "+el.Released;
         let p3=document.createElement("p");
-        p3.innerText="Genre: "+elem.Genre;
+        p3.innerText="Genre: "+el.Genre;
         let p4=document.createElement("p");
-        p4.innerText="imdbRating: "+elem.imdbRating;
+        p4.innerText="imdbRating: "+el.imdbRating;
         div.append(poster,p1,p2,p3,p4);
         movie_box.append(div);
     })
@@ -142,19 +142,19 @@ b2.addEventListener("click",()=>{
         return a.imdbRating - b.imdbRating;
     })
     movie_box.innerHTML=null;
-    movie_data.forEach((elem)=>{
+    movie_data.forEach((element)=>{
         let div=document.createElement("div");
         div.id="dab";
         let poster =document.createElement("img");
-        poster.src=elem.Poster;
+        poster.src=element.Poster;
         let p1=document.createElement("p");
-        p1.innerText="Title: "+elem.Title;
+        p1.innerText="Title: "+element.Title;
         let p2=document.createElement("p");
-        p2.innerText="Released: "+elem.Released;
+        p2.innerText="Released: "+element.Released;
         let p3=document.createElement("p");
-        p3.innerText="Genre: "+elem.Genre;
+        p3.innerText="Genre: "+element.Genre;
         let p4=document.createElement("p");
-        p4.innerText="imdbRating: "+elem.imdbRating;
+        p4.innerText="imdbRating: "+element.imdbRating;
         div.append(poster,p1,p2,p3,p4);
         movie_box.append(div);
     })
