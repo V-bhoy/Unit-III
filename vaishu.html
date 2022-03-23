@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text"/>
+    <button onclick="practice()">Search</button>
+    <div class="container"></div>
+</body>
+</html>
+<script>
+  async function practice(){
+           let city=document.querySelector("input").value;
+           let url=`api.openweathermap.org/data/2.5/weather?q=${city}&appid=`;
+           try{
+              let p= await fetch(url);
+             let data= await p.json();
+             append(data);
+             console.log(data);
+           }
+           catch(err){
+               console.log("sry for the incnvenience")
+           }
+           
+  } 
+      
+ function append(db){
+     let box=document.querySelector(".container");
+     box.innerHTML=null;
+     if(db.Title===undefined){
+         box.append("Not found");
+     }
+     else{
+        let t=db.Title;
+     
+        box.append(t);
+     }
+     
+
+ }
+
+</script>
