@@ -4,9 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>Mini Weather Check</h1>
+    <div id="search-bar">
+        <input type="text" id="city" placeholder="Enter city name">
+        <button id="search">Search</button>
+    </div>
+    <div id="daily"></div>
+    <div id="weather-info">
+        
+        <div id="info">
+        </div>
+        <div>
+            <iframe title="map" width="500" height="400" id="gmap_canvas" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+        </div>
+        
+      
+    </div>
 </body>
 </html>
+<script src="./index.js"></script>

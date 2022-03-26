@@ -10,22 +10,31 @@
             width: 200px;
         }
         #movies{
-            height: 200px;
+            height: 400px;
             width: 206px;
             border: solid 1px black;
             border-top: none;
             overflow: scroll;
+        }
+        #post{
+         display: block;
+          width: 80%;
+          margin: auto;
+          margin-bottom: 5px;
+           height: 250px;
         }
     </style>
 </head>
 <body>
     <input oninput="debounce(main,1000)" type="text" id="query"/>
     <div id="movies"></div>
+    <div id="movie_data"></div>
 </body>
 </html>
 <script>
     let timerid;
     let movies=document.querySelector("#movies");
+    let movie_data=document.querySelector("#movie_data");
    async function search_movie(){
     try{
        let input = document.querySelector("#query").value;
@@ -44,12 +53,15 @@
        movies.innerHTML=null;
        
        data.forEach(function(elem){
-           let p=document.createElement("p");
-           p.innerText=elem.Title;
-           movies.append(p);
+           let para=document.createElement("p");
+           para.innerText=elem.Title;
+           movies.append(para);
+           para.addEventListener("click",async function);
+           console.log(movie_info());
        });
+      
    }
-
+  
    async function main(){
        let data=await search_movie();
        if(data===undefined){
@@ -66,4 +78,35 @@
             func();
         }, delay);   
    }
+   async function movie_info(movie){
+       try{
+           let res= await fetch(`https://www.omdbapi.com/?apikey=f8a49f0a&t=${movie}`)
+           let data= await res.json();
+           return data;
+       }
+       catch(error){
+           alert("Oops...Something went wrong!")
+       }
+   }
+  
+   function info(movie){
+       movie_data.innerHTML=null;
+       let poster=document.createElement("img");
+       let p1=document.createElement("p");
+       let p2=document.createElement("p");
+       let p3=document.createElement("p");
+       let p4=document.createElement("p");
+       let p5=document.createElement("p");
+       let p6=document.createElement("p");
+       poster.src=movie.Poster;
+       poster.id="post";
+       p1.innerText=`Title: ${movie.Title}`;
+       p2.innerText=`Released: ${movie.Released}`;
+       p3.innerText=`Type: ${movie.Type}`;
+       p4.innerText=`Genre: ${movie.Genre}`;
+       p5.innerText=`Language: ${movie.Language}`;
+       p6.innerText=`imdbRating: ${movie.imdbRating}`;
+       movie_data.append(poster,p1,p2,p3,p4,p5,p6)
+   }
+   
 </script>

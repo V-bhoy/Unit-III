@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="nav">
+       <a href="index.html">Home</a>
+        <a href="search.html">Search Your Recipe</a>
+        <a href="best.html">Best Recipes</a>
+    </div>
+    
+</body>
+</html>
+<script type="module">
+    import getData from "./component/comp.js";
+    let url="https://themealdb.com/api/json/v1/1/search.php?s=";
+    let data= await getData(url);
+    console.log(data);
+</script>
